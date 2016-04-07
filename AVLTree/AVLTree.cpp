@@ -1,22 +1,16 @@
 #pragma once
+#include "AVLTree.h"
 
-class AVLTree {
-public:
+int AVLTree::getSize() {
+	return size;
+};
 
-	AVLTree();
-	~AVLTree();
-	//TODO: bool AVLTree::insert(int key, int value);
-	//TODO: int AVLTree::getHeight();
-	//TODO: int AVLTree::getSize();
-	//TODO: void AVLTree::print();
-	//TODO: bool AVLTree::find(int key, int& value);
-	//TODO: vector<int> AVLTree::findRange(int lowkey, int highkey);
-
-	//TODO: recursive insert
-	//TODO: double rotate
-	//TODO: double rotate
-	//TODO: not be a little bitch?
-
-private:
-
+std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
+	std::vector<int> inRange;
+	for (auto it = tree.begin(); it != tree.end(); it++) {
+		if (it->key <= highkey && it->key >= lowkey) {
+			inRange.push_back(it->key);
+		}
+	}
+	return inRange;
 };
