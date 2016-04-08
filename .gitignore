@@ -46,6 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# more bullshit
+# etc files
 *.sdf
 *.suo
+*.opendb
