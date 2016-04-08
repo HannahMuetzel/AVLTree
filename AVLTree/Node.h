@@ -1,32 +1,20 @@
 #pragma once
-
-#define PTR unsigned int
-#define NULLPTR -1
+#include "iostream"
+using namespace std;
 
 class Node {
 public:
 	int key;
 	int value;
-	PTR par;
-	PTR lc;
-	PTR rs;
+	Node* lc = NULL;		//left child
+	Node* rc = NULL;	    //right child
 
-	//Default constructor
-	Node() {
-		key = 0;
-		value = 0;
-		par = NULLPTR;
-		lc = NULLPTR;
-		rs = NULLPTR;
-	};
-
-	//Passed key, value, par, lc, rs constructor
-	Node(int keyX, int valueX, PTR parX, PTR lcX, PTR rsX) {
-		key = keyX;
-		value = valueX;
-		par = parX;
-		lc = lcX;
-		rs = rsX;
+	//Passed key, value, lc, rs constructor
+	Node(int keyX, int valueX, Node* lcX, Node* rcX) {
+		this->key = keyX;
+		this->value = valueX;
+		this->lc = lcX;
+		this->rc = rcX;
 	};
 
 };

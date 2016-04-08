@@ -11,19 +11,19 @@ public:
 	AVLTree();
 	~AVLTree();
 
-	//TODO: bool AVLTree::insert(int key, int value);
-	//TODO: int AVLTree::getHeight();
+	bool AVLTree::insert(int key, int value);
+	int AVLTree::getHeight();
 	int AVLTree::getSize();
-	//TODO: void AVLTree::print();
-	//TODO: bool AVLTree::find(int key, int& value);
+	void AVLTree::print();
+	//TODO:
+	bool AVLTree::find(int key, int& value);
 	std::vector<int> AVLTree::findRange(int lowkey, int highkey);
-
-	//TODO: recursive insert
-	//TODO: double rotate
+	void inorder(Node *curr);
+	bool AVLTree::insertHelper(Node*& rootNode, Node* newNode);
+	//TODO: single rotate
 	//TODO: double rotate
 
 private:
-	std::vector<Node> tree;
-	PTR root;
+	Node* root;
 	int size;
 };
