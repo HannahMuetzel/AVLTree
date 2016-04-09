@@ -15,9 +15,9 @@ public:
 	//TODO:
 	bool AVLTree::find(int key, int& value);
 	std::vector<int> AVLTree::findRange(int lowkey, int highkey);
-	void inorder(Node *curr);
 	bool AVLTree::insertHelper(Node*& rootNode, Node* newNode);
 	int AVLTree::recursiveGetHeight(Node* currNode);
+	void AVLTree::inorderLvls(const Node* curr, int lvl);
 	//TODO: single rotate
 	//TODO: double rotate
 

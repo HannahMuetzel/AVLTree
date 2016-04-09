@@ -1,4 +1,6 @@
 #include "AVLTree.h"
+#include <ostream>
+#include <string>
 
 AVLTree::AVLTree() {
 	size = 0; //number of nodes in the tree initialized to 0
@@ -89,20 +91,16 @@ int AVLTree::recursiveGetHeight(Node* currNode) {
 
 void AVLTree::print() {
 	//do inorder traversal of tree recursively, printing as we go
-	inorder(root);
+	inorderLvls(root, 0);
 };
 
-void AVLTree::inorder(Node* curr) {
-	//print nothing if the passed node is the root
-	if (!curr) {
+void AVLTree::inorderLvls(const Node* curr, int lvl) {
+	if (curr == 0) {
 		return;
 	}
-	//go to the left
-	inorder(curr->lc);
-	//print, key then value
-	std::cout << "(" << curr->key << ", " << curr->value << ")" << std::endl;
-	//go to the right
-	inorder(curr->rc);
+	inorderLvls(curr->rc, lvl + 1);
+	cout << string(lvl, '    ') << "(" << curr->key << ", " << curr->value << ")" << endl;
+	inorderLvls(curr->lc, lvl + 1);
 }
 
 bool AVLTree::find(int key, int& value) {
