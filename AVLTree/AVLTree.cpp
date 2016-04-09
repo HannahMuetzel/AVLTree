@@ -8,18 +8,21 @@ AVLTree::AVLTree() {
 
 bool AVLTree::insert(int key, int value) {
 	//inc tree size by 1 if going to return true, else don't increment it
-	Node* newNode;
-	//TODO: if the key is already in the tree, return false aka do a find
+	Node* newNode = new Node(key, value, NULL, NULL);
+	
+	//If the key is already in the tree, then we don't add the node.
+	if (find(key, value)) {
 
-	if (root == NULL) {
-		newNode = new Node(key, value, NULL, NULL);
-		size++;
-		return true;
-	} 
-	else {
-		insertHelper(root, newNode);
-		size++;
-		return true;
+		if (root == NULL) {
+			newNode = new Node(key, value, NULL, NULL);
+			size++;
+			return true;
+		}
+		else {
+			insertHelper(root, newNode);
+			size++;
+			return true;
+		}
 	}
 
 	//Failed to add the node
@@ -95,6 +98,7 @@ bool AVLTree::find(int key, int& value) {
 };
 
 
+/*
 std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
 	std::vector<int> inRange;
 	//if root == NULL then there is nothing in the tree and thus nothing in the range
@@ -121,3 +125,4 @@ std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
 	}
 	return inRange;
 };
+*/

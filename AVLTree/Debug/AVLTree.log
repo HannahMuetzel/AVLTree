@@ -1,44 +1,12 @@
 ﻿  main.cpp
-c:\users\hannah\documents\github\avltree\avltree\main.cpp(29): error C2679: binary '<<': no operator found which takes a right-hand operand of type 'std::vector<int,std::allocator<_Ty>>' (or there is no acceptable conversion)
-          with
-          [
-              _Ty=int
-          ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(497): note: could be 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(477): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(457): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(437): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(417): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(396): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(376): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(355): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(335): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(315): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(290): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(270): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(236): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(216): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(209): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(202): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(196): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(694): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(741): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(779): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(826): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(952): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const signed char *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(959): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,signed char)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(966): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const unsigned char *)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(973): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,unsigned char)'
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(983): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>,std::vector<int,std::allocator<_Ty>>>(std::basic_ostream<char,std::char_traits<char>> &&,const std::vector<_Ty,std::allocator<_Ty>> &)'
-          with
-          [
-              _Ty=int
-          ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream(1021): note: or       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const std::error_code &)'
-  c:\users\hannah\documents\github\avltree\avltree\main.cpp(29): note: while trying to match the argument list '(std::ostream, std::vector<int,std::allocator<_Ty>>)'
-          with
-          [
-              _Ty=int
-          ]
-  AVLTree.cpp
-  Generating Code...
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(51): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
+main.obj : error LNK2005: "public: __thiscall AVLTree::AVLTree(void)" (??0AVLTree@@QAE@XZ) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: bool __thiscall AVLTree::find(int,int &)" (?find@AVLTree@@QAE_NHAAH@Z) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: int __thiscall AVLTree::getHeight(void)" (?getHeight@AVLTree@@QAEHXZ) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: int __thiscall AVLTree::getSize(void)" (?getSize@AVLTree@@QAEHXZ) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: void __thiscall AVLTree::inorder(class Node *)" (?inorder@AVLTree@@QAEXPAVNode@@@Z) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: bool __thiscall AVLTree::insert(int,int)" (?insert@AVLTree@@QAE_NHH@Z) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: bool __thiscall AVLTree::insertHelper(class Node * &,class Node *)" (?insertHelper@AVLTree@@QAE_NAAPAVNode@@PAV2@@Z) already defined in AVLTree.obj
+main.obj : error LNK2005: "public: void __thiscall AVLTree::print(void)" (?print@AVLTree@@QAEXXZ) already defined in AVLTree.obj
+main.obj : error LNK2019: unresolved external symbol "public: __thiscall AVLTree::~AVLTree(void)" (??1AVLTree@@QAE@XZ) referenced in function _main
+C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe : fatal error LNK1120: 1 unresolved externals
