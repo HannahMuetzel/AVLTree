@@ -59,33 +59,30 @@ int AVLTree::getHeight() {
 		return 0;
 	} else {
 		//otherwise, find the max height recursively by passing the root
-		int maxHeight = recursiveGetHeight(root, 0, 0);
+		int maxHeight = recursiveGetHeight(root);
 		return maxHeight;
 	}
 };
 
-int AVLTree::recursiveGetHeight(Node* currNode, int leftHeight, int rightHeight) {
+int AVLTree::recursiveGetHeight(Node* currNode) {
 	//check to see if root is NULL
-	if (root == NULL) {
+	if (currNode == NULL) {
 		//if it is, then height = 0
 		return 0;
 	}
 	else {
 		//otherwise, recursively find the left max height
-		if (currNode->lc != NULL) {
-			leftHeight = recursiveGetHeight(currNode->lc, leftHeight, rightHeight);
-		}
+		int leftHeight = recursiveGetHeight(currNode->lc);
 		//then, recursively find the right max height
-		if (currNode->rc != NULL) {
-			rightHeight = recursiveGetHeight(currNode->rc, leftHeight, rightHeight);
-		}
+		int rightHeight = recursiveGetHeight(currNode->rc);
+
 		//compare the two
-		//the max height will be the greater of the two heights
+		//the max height will be the greater of the two heights +1 for the root node
 		if (leftHeight > rightHeight) {
-			return leftHeight;
+			return leftHeight + 1;
 		}
 		else {
-			return rightHeight;
+			return rightHeight + 1;
 		}
 	}
 };
