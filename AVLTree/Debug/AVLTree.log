@@ -1,12 +1,7 @@
-﻿  main.cpp
-c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(51): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
-main.obj : error LNK2005: "public: __thiscall AVLTree::AVLTree(void)" (??0AVLTree@@QAE@XZ) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: bool __thiscall AVLTree::find(int,int &)" (?find@AVLTree@@QAE_NHAAH@Z) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: int __thiscall AVLTree::getHeight(void)" (?getHeight@AVLTree@@QAEHXZ) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: int __thiscall AVLTree::getSize(void)" (?getSize@AVLTree@@QAEHXZ) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: void __thiscall AVLTree::inorder(class Node *)" (?inorder@AVLTree@@QAEXPAVNode@@@Z) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: bool __thiscall AVLTree::insert(int,int)" (?insert@AVLTree@@QAE_NHH@Z) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: bool __thiscall AVLTree::insertHelper(class Node * &,class Node *)" (?insertHelper@AVLTree@@QAE_NAAPAVNode@@PAV2@@Z) already defined in AVLTree.obj
-main.obj : error LNK2005: "public: void __thiscall AVLTree::print(void)" (?print@AVLTree@@QAEXXZ) already defined in AVLTree.obj
-main.obj : error LNK2019: unresolved external symbol "public: __thiscall AVLTree::~AVLTree(void)" (??1AVLTree@@QAE@XZ) referenced in function _main
-C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe : fatal error LNK1120: 1 unresolved externals
+﻿  AVLTree.cpp
+  Generating Code...
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(50): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
+  Compiling...
+  main.cpp
+c:\users\hannah\documents\github\avltree\avltree\main.cpp : fatal error C1041: cannot open program database 'C:\Users\Hannah\Documents\GitHub\AVLTree\AVLTree\Debug\vc140.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  Generating Code...

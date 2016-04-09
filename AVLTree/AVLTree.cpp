@@ -1,10 +1,9 @@
-#pragma once
 #include "AVLTree.h"
 
 AVLTree::AVLTree() {
 	size = 0; //number of nodes in the tree initialized to 0
 	root = NULL; //root initialized to null ptr
-};
+}
 
 bool AVLTree::insert(int key, int value) {
 	//inc tree size by 1 if going to return true, else don't increment it
@@ -56,22 +55,55 @@ int AVLTree::getSize() {
 
 int AVLTree::getHeight() {
 	//The max height of the tree will be whichever side of the tree is higher
-	int maxHeight = 0;
-	//TODO: height method to find the height of the tree, return an int which is the height
-	return maxHeight;
+	//check to see if root is NULL
+	if (root == NULL) {
+		//if it is, then height = 0
+		return 0;
+	} else {
+		//otherwise, find the max height recursively by passing the root
+		int maxHeight = recursiveGetHeight(root);
+		return maxHeight;
+	}
+};
+
+int AVLTree::recursiveGetHeight(Node* currNode) {
+	//check to see if root is NULL
+	if (root == NULL) {
+		//if it is, then height = 0
+		return 0;
+	}
+	else {
+		//otherwise, recursively find the left max height
+		int leftHeight = recursiveGetHeight(currNode->lc);
+		//then, recursively find the right max height
+		int rightHeight = recursiveGetHeight(currNode->rc);
+
+		//compare the two
+		//the max height will be the greater of the two heights +1 for the root node
+		if (leftHeight > rightHeight) {
+			return leftHeight + 1;
+		}
+		else {
+			return rightHeight + 1;
+		}
+	}
 };
 
 void AVLTree::print() {
-	//do inorder traversal of tree
+	//do inorder traversal of tree recursively, printing as we go
 	inorder(root);
 };
 
 void AVLTree::inorder(Node* curr) {
+	//print nothing if the passed node is the root
 	if (!curr) {
 		return;
 	}
+	//go to the left
 	inorder(curr->lc);
+	//print, key then value
 	std::cout << "(" << curr->key << ", " << curr->value << ")" << std::endl;
+	//go to the right
 	inorder(curr->rc);
 }
 
@@ -126,3 +158,8 @@ std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
 	return inRange;
 };
 */
+
+std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
+	std::vector<int> inRange;
+	return inRange;
+}

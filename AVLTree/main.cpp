@@ -1,5 +1,4 @@
-#pragma once
-#include "AVLTree.cpp"
+#include "AVLTree.h"
 
 int main() {
 
