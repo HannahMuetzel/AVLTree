@@ -1,7 +1,5 @@
-﻿  AVLTree.cpp
+﻿  main.cpp
+  AVLTree.cpp
   Generating Code...
-c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(50): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
-  Compiling...
-  main.cpp
-c:\users\hannah\documents\github\avltree\avltree\main.cpp : fatal error C1041: cannot open program database 'C:\Users\Hannah\Documents\GitHub\AVLTree\AVLTree\Debug\vc140.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
-  Generating Code...
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(49): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
+  AVLTree.vcxproj -> C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe

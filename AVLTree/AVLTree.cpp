@@ -10,19 +10,18 @@ bool AVLTree::insert(int key, int value) {
 	Node* newNode = new Node(key, value, NULL, NULL);
 	
 	//If the key is already in the tree, then we don't add the node.
-	if (find(key, value)) {
-
 		if (root == NULL) {
 			newNode = new Node(key, value, NULL, NULL);
 			size++;
 			return true;
 		}
 		else {
-			insertHelper(root, newNode);
-			size++;
-			return true;
+			if (find(key, value)) {
+				insertHelper(root, newNode);
+				size++;
+				return true;
+			}
 		}
-	}
 
 	//Failed to add the node
 	return false;
