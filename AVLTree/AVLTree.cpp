@@ -59,12 +59,12 @@ int AVLTree::getHeight() {
 		return 0;
 	} else {
 		//otherwise, find the max height recursively by passing the root
-		int maxHeight = recursiveGetHeight(root);
+		int maxHeight = recursiveGetHeight(root, 0, 0);
 		return maxHeight;
 	}
 };
 
-int AVLTree::recursiveGetHeight(Node* currNode) {
+int AVLTree::recursiveGetHeight(Node* currNode, int leftHeight, int rightHeight) {
 	//check to see if root is NULL
 	if (root == NULL) {
 		//if it is, then height = 0
@@ -72,17 +72,20 @@ int AVLTree::recursiveGetHeight(Node* currNode) {
 	}
 	else {
 		//otherwise, recursively find the left max height
-		int leftHeight = recursiveGetHeight(currNode->lc);
+		if (currNode->lc != NULL) {
+			leftHeight = recursiveGetHeight(currNode->lc, leftHeight, rightHeight);
+		}
 		//then, recursively find the right max height
-		int rightHeight = recursiveGetHeight(currNode->rc);
-
+		if (currNode->rc != NULL) {
+			rightHeight = recursiveGetHeight(currNode->rc, leftHeight, rightHeight);
+		}
 		//compare the two
-		//the max height will be the greater of the two heights +1 for the root node
+		//the max height will be the greater of the two heights
 		if (leftHeight > rightHeight) {
-			return leftHeight + 1;
+			return leftHeight;
 		}
 		else {
-			return rightHeight + 1;
+			return rightHeight;
 		}
 	}
 };
@@ -107,24 +110,27 @@ void AVLTree::inorder(Node* curr) {
 
 bool AVLTree::find(int key, int& value) {
 	Node* check = root; //start at root, compare passed values to Node check
+	//if the root is empty then there are no keys, return false
+	if (check == NULL) {
+		return false;
+	};
 	while (check->key = !key) {
 		//if root value is >  given key, go to left tree
 		if (check->key > key) {
 			check = check->lc;
 			value = check->value;
 		}
-		else {
+		else if (check->key < key) {
 			check = check->rc;
 			value = check->value;
-		} //else (root value is <= given key) go to right tree
-
-		//key not found or tree is empty
-		if (check == NULL) {
-			return false;
+		}
+		else {
+			return true;
+			//else (root value is <= given key) go to right tree
 		}
 	}
-	//will only get here if the key has been found in the tree
-	return true;
+	//return false b/c key was not found in the tree
+	return false;
 };
 
 

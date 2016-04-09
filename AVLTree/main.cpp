@@ -18,12 +18,39 @@ int main() {
 		testSize++;
 		//cout << "Inserted key " << 3 << " with value " << 30 << endl;
 	}
+	if (testTree.insert(4, 30)) {
+		testSize++;
+		//cout << "Inserted key " << 3 << " with value " << 30 << endl;
+	}
+	if (testTree.insert(5, 30)) {
+		testSize++;
+		//cout << "Inserted key " << 3 << " with value " << 30 << endl;
+	}
+	if (testTree.insert(6, 30)) {
+		testSize++;
+		//cout << "Inserted key " << 3 << " with value " << 30 << endl;
+	}
+	if (testTree.insert(7, 30)) {
+		testSize++;
+		//cout << "Inserted key " << 3 << " with value " << 30 << endl;
+	}
+
+	int height = testTree.getHeight();
+	cout << "The height is " << height << endl;
 	
+	/*
 	bool dupInsert = testTree.insert(1, 10);
 	if (dupInsert) {
 		testSize++;
 	}
 	cout << "Inserted key 1 with value 10? " << dupInsert << endl;
+	*/
+	
+	int testVal = 0;
+	bool found = testTree.find(47, testVal);
+	cout << "Key 47 was found? " << found << " testVal = " << testVal << endl;
+	testTree.find(3, testVal);
+	cout << "Key 3 was found? " << found << " testVal = " << testVal << endl;
 
 	int actSize = testTree.getSize();
 	cout << "The size according to the AVLTree is " << actSize << " and the main.cpp size is " << testSize << endl;
