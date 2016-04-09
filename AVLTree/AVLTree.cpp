@@ -8,8 +8,8 @@ AVLTree::AVLTree() {
 bool AVLTree::insert(int key, int value) {
 	//inc tree size by 1 if going to return true, else don't increment it
 	Node* newNode = new Node(key, value, NULL, NULL);
-	
-	//TODO: If the key is already in the tree, then we don't add the node.
+	int arbitrary = 0;
+	if (!find(key, arbitrary)) {
 		if (root == NULL) {
 			size++;
 			root = newNode;
@@ -21,7 +21,7 @@ bool AVLTree::insert(int key, int value) {
 				return true;
 			
 		}
-
+	}
 	//Failed to add the node
 	return false;
 };
@@ -107,27 +107,29 @@ void AVLTree::inorder(Node* curr) {
 
 bool AVLTree::find(int key, int& value) {
 	Node* check = root; //start at root, compare passed values to Node check
-	//if the root is empty then there are no keys, return false
+						//if the root is empty then there are no keys, return false
 	if (check == NULL) {
 		return false;
 	};
-	while (check->key = !key) {
-		//if root value is >  given key, go to left tree
-		if (check->key > key) {
-			check = check->lc;
-			value = check->value;
-		}
-		else if (check->key < key) {
-			check = check->rc;
-			value = check->value;
-		}
-		else {
-			return true;
-			//else (root value is <= given key) go to right tree
+	while (check->key != key) {
+		if (check != NULL) {
+			if (check->key > key) {
+				value = check->value;
+				check = check->lc;
+			}
+			else {
+				value = check->value;
+				check = check->rc;
+			}
+
+			if (check == NULL) {
+				value = value;
+				return false;
+			}
 		}
 	}
 	//return false b/c key was not found in the tree
-	return false;
+	return true;
 };
 
 
