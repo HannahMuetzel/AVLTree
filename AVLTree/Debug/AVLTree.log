@@ -1,5 +1,1 @@
-﻿  main.cpp
-  AVLTree.cpp
-  Generating Code...
-c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(49): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
-  AVLTree.vcxproj -> C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe
+﻿LINK : fatal error LNK1168: cannot open C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe for writing
