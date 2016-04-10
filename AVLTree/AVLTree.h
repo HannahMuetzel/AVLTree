@@ -7,7 +7,6 @@ class AVLTree {
 public:
 
 	AVLTree();
-
 	bool AVLTree::insert(int key, int value);
 	int AVLTree::getHeight();
 	int AVLTree::getSize();
@@ -16,13 +15,15 @@ public:
 	std::vector<int> AVLTree::findRange(int lowkey, int highkey);
 	
 private:
+	
 	Node* root;
 	int size;
+	
+	//Helper methods
 	std::vector<Node> extra;
 	bool AVLTree::insertHelper(Node*& rootNode, Node* newNode);
 	int AVLTree::recursiveGetHeight(Node* currNode);
 	void AVLTree::inorderLvls(const Node* curr, int lvl);
-	std::vector<int> AVLTree::recur(Node* curr, int lowkey, int highkey, std::vector<int> inRange);
 	//TODO: single rotate
 	//TODO: double rotate
 
