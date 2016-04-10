@@ -1,1 +1,8 @@
-﻿  AVLTree.vcxproj -> C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe
+﻿  AVLTree.cpp
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(105): warning C4305: 'argument': truncation from 'int' to 'char'
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(105): warning C4309: 'argument': truncation of constant value
+  Generating Code...
+c:\users\hannah\documents\github\avltree\avltree\avltree.cpp(53): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
+  Skipping... (no relevant changes detected)
+  main.cpp
+  AVLTree.vcxproj -> C:\Users\Hannah\Documents\GitHub\AVLTree\Debug\AVLTree.exe

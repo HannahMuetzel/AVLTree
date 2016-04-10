@@ -55,6 +55,12 @@ int main() {
 
 	testTree.print();
 
+	std::vector<int> range = testTree.findRange(2, 6);
+	for (auto it = range.begin(); it < range.end(); it++) {
+		cout << *it << " ";
+	}
+
+
 	system("pause");
 	return 0;
 }

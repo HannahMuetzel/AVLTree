@@ -15,6 +15,7 @@ bool AVLTree::insert(int key, int value) {
 		if (root == NULL) {
 			size++;
 			root = newNode;
+			extra.push_back(*root);
 			return true;
 		}
 		else {
@@ -32,6 +33,7 @@ bool AVLTree::insertHelper(Node*& rootNode, Node* newNode) {
 	if (newNode->key < rootNode->key) {
 		if (rootNode->lc == NULL) {
 			rootNode->lc = newNode;
+			extra.push_back(*newNode);
 			return true;
 		}
 		else {
@@ -41,6 +43,7 @@ bool AVLTree::insertHelper(Node*& rootNode, Node* newNode) {
 	else {
 		if (rootNode->rc == NULL) {
 			rootNode->rc = newNode;
+			extra.push_back(*newNode);
 			return true;
 		}
 		else {
@@ -130,37 +133,13 @@ bool AVLTree::find(int key, int& value) {
 	return true;
 };
 
-
-/*
 std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
 	std::vector<int> inRange;
-	//if root == NULL then there is nothing in the tree and thus nothing in the range
-	if (root != NULL) {
-		Node* check = root; //start at root, compare passed values to Node check
-		//while we have nodes to check
-		int checkNum = 0;
-		while (checkNum =! size) {
-			//if check value is > high key AND < low key then check left tree.
-			if (check->key > lowkey && check->key < highkey) {
-				check = check->rc;
-				inRange.push_back(check->key);
-				inRange.push_back(check->value);
-			}
-			
-			//if check value is < high key AND > low key then check left tree.
-			if (check->key < highkey && check->key > lowkey) {
-				check = check->lc;
-				inRange.push_back(check->key);
-				inRange.push_back(check->value);
-			} //else (root value is <= given key) go to right tree
-
-			checkNum++;
+	for (auto it = extra.begin(); it < extra.end(); it++) {
+		if (it->key >= lowkey && it->key <= highkey) {
+			inRange.push_back(it->key);
+			inRange.push_back(it->value);
+		}
 	}
 	return inRange;
 };
-*/
-
-std::vector<int> AVLTree::findRange(int lowkey, int highkey) {
-	std::vector<int> inRange;
-	return inRange;
-}
