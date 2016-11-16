@@ -60,6 +60,11 @@ int main() {
 		cout << *it << " ";
 	}
 
+	cout << "Test LEFT rotate!" << endl;
+	AVLTree rotationTree;
+	
+	cout << "The BST looks like:" << endl;
+	rotationTree.print();
 
 	system("pause");
 	return 0;

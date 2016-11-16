@@ -14,10 +14,13 @@ AVLTree::AVLTree() {
 
 /*
 bool insert(int, int)
+Inserts to create an AVL tree.
+Rotations implemented.
 Inserts a new node to the tree, linking it to the previous node based on key value
 by sending it to the recursive insertHelper function.
 Node->key values are added to a vector in order to use later in findRange function.
-Runtime: theta(1)
+(Calls findBalance funciton, which calls recursiveGetHeight, therefore...)
+Runtime: theta(n^2)
 */
 bool AVLTree::insert(int key, int value) {
 	//inc tree size by 1 if going to return true, else don't increment it
@@ -28,13 +31,65 @@ bool AVLTree::insert(int key, int value) {
 			size++;
 			root = newNode;
 			extra.push_back(*root);
+			updateDepths();
 			return true;
 		}
 		else {
 				insertHelper(root, newNode);
 				size++;
+				//TODO: implement rotations
+				/*
+				-trav tree
+				-if any node has balance >= |2|
+					- find deepest node with |2|
+						-if +2:
+							-if bal of lc = +1:
+								-RR
+							-if bal of lc = -1:
+								-LR
+								-RR
+						-if -2:
+							-if bal of rc = -1:
+								-LR
+							-if bal of rc = +1:
+								-RR
+								-LR
+				-updateDepths();
+				*/
 				return true;
-			
+				//TODO: write a function to find the deepest node with |2|
+				// ^ pseudo-code in spiral notebook, Raymer ok'd it! :)
+		}
+	}
+	//Failed to add the node
+	return false;
+};
+
+/*
+bool insertBST(int, int)
+Inserts to create a binary search tree, not an AVL tree.
+No rotations implemented.
+Inserts a new node to the tree, linking it to the previous node based on key value
+by sending it to the recursive insertHelper function.
+Node->key values are added to a vector in order to use later in findRange function.
+Runtime: theta(1)
+*/
+bool AVLTree::insertBST(int key, int value) {
+	//inc tree size by 1 if going to return true, else don't increment it
+	Node* newNode = new Node(key, value, NULL, NULL);
+	int arbitrary = 0;
+	int balance = 0;
+	if (!find(key, arbitrary)) {
+		if (root == NULL) {
+			size++;
+			root = newNode;
+			extra.push_back(*root);
+			return true;
+		}
+		else {
+			insertHelper(root, newNode);
+			size++;
+			return true;
 		}
 	}
 	//Failed to add the node
@@ -147,8 +202,67 @@ void AVLTree::inorderLvls(const Node* curr, int lvl) {
 		return;
 	}
 	inorderLvls(curr->rc, lvl + 1);
-	cout << string(lvl, '    ') << "(" << curr->key << ", " << curr->value << ")" << endl;
+	cout << string(lvl, '\t') << "(" << curr->key << ", " << curr->value << ")" << endl;
 	inorderLvls(curr->lc, lvl + 1);
+}
+
+/*
+void leftRotate(Node ptr)
+A lovely readjustment of pointers in order to do a left rotation of nodes.
+If given BST with 1-2-3 (inserted in that order), this is not a valid AVL tree, and a left rotation is needed.
+~ 2 becomes new root
+~ 1's right child becomes 2's left child
+~ 2's left child becomes 1
+ **THERE IS NO CHANGE TO 2's !RIGHT! CHILD--It remains 3!**
+Runtime: theta(1)
+*/
+void AVLTree::leftRotate(Node* origRoot, Node* newRoot)
+{
+	origRoot->rc = newRoot->lc;
+	newRoot->lc = origRoot;
+}
+
+/*
+int findBalance(Node ptr)
+Returns the balance of the node, as calculated by the equation:
+	balance = height of left subtree - height of right subtree
+Calls the recursive function to find the balance of a specific node twice.
+(Thus, findBalance traverses the tree twice.)
+Runtime: theta(n^2)
+*/
+int AVLTree::findBalance(Node* node)
+{
+	int balance = node->LD - node->RD;
+	return balance;
+}
+
+/*
+Update the left and right depths of each node in the AVL tree.
+This helps calculate the balance and makes rotations possible.
+Runtime: theta(n)
+*/
+void AVLTree::updateDepths()
+{
+	for (auto it = extra.begin(); it < extra.end(); it++) {
+		it->LD = recursiveGetHeight(it->lc);
+		it->RD = recursiveGetHeight(it->rc);
+	}
+}
+
+/*
+void leftRotate(Node ptr)
+A suspiciously similiar readjustment of pointers in order to do a right rotation of nodes.
+If given BST with 3-2-1 (inserted in that order), this is not a valid AVL tree, and a right rotation is needed.
+~ 2 becomes new root
+~ 3's left child becomes 2's right child
+~ 2's right child becomes 3
+ **THERE IS NO CHANGE TO 2's !LEFT! CHILD--It remains 1!**
+Runtime: theta(1)
+*/
+void AVLTree::rightRotate(Node* origRoot, Node* newRoot)
+{
+	origRoot->lc = newRoot->rc;
+	newRoot->rc = origRoot;
 }
 
 /*
@@ -181,7 +295,7 @@ bool AVLTree::find(int key, int& value) {
 		}
 	}
 	//return false b/c key was not found in the tree
-	return true;
+	return false;
 };
 
 /*

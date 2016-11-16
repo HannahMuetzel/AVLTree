@@ -13,6 +13,7 @@ public:
 	void AVLTree::print();
 	bool AVLTree::find(int key, int& value);
 	std::vector<int> AVLTree::findRange(int lowkey, int highkey);
+	bool AVLTree::insertBST(int key, int value);
 	
 private:
 	
@@ -24,7 +25,8 @@ private:
 	bool AVLTree::insertHelper(Node*& rootNode, Node* newNode);
 	int AVLTree::recursiveGetHeight(Node* currNode);
 	void AVLTree::inorderLvls(const Node* curr, int lvl);
-	//TODO: single rotate
-	//TODO: double rotate
-
+	void AVLTree::rightRotate(Node*, Node*);
+	void AVLTree::leftRotate(Node*, Node*);
+	int AVLTree::findBalance(Node*);
+	void updateDepths();
 };
