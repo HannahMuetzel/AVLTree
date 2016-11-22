@@ -1,7 +1,4 @@
 ﻿  AVLTree.cpp
-  Generating Code...
-h:\documents\github\avltree\avltree\avltree.cpp(71): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
-  Skipping... (no relevant changes detected)
-  main.cpp
+h:\documents\github\avltree\avltree\avltree.cpp(108): warning C4715: 'AVLTree::insertHelper': not all control paths return a value
   AVLTree.vcxproj -> H:\Documents\GitHub\AVLTree\x64\Debug\AVLTree.exe
   AVLTree.vcxproj -> H:\Documents\GitHub\AVLTree\x64\Debug\AVLTree.pdb (Full PDB)

@@ -55,16 +55,29 @@ int main() {
 
 	testTree.print();
 
+	cout << "Gonna test the range now, yo." << endl;
 	std::vector<int> range = testTree.findRange(2, 6);
 	for (auto it = range.begin(); it < range.end(); it++) {
 		cout << *it << " ";
 	}
 
-	cout << "Test LEFT rotate!" << endl;
-	AVLTree rotationTree;
+	cout << "Test AVL rotations!" << endl;
+	AVLTree AVL;
+	AVLTree BST;
+
+	AVL.insertAVL(1, 10);
+	BST.insert(1, 10);
+	AVL.insertAVL(2, 20);
+	BST.insert(2, 20);
+	AVL.insertAVL(5, 50);
+	BST.insert(5, 50);
+
 	
 	cout << "The BST looks like:" << endl;
-	rotationTree.print();
+	BST.print();
+
+	cout << "The AVL looks like:" << endl;
+	AVL.print();
 
 	system("pause");
 	return 0;
